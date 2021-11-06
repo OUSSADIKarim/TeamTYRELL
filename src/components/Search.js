@@ -6,7 +6,8 @@ import { Button } from '@material-ui/core'
 import img from '../img/logo.png'
 function Search() {
     const [input, setInput] = useState("")
-
+    const h1 = <h1>{input}</h1>
+    const image = <img src={img} alt="logo"/>
     const search = e => {
         e.preventDefault()
     }
@@ -14,7 +15,7 @@ function Search() {
     return (
         <div className='search'>
             <div className='logo'>
-                <img src={img} alt='logo'/>
+                {input === "" ? image : h1}
             </div>
 
             <div className='input_container'>
